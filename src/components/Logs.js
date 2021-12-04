@@ -24,7 +24,7 @@ export const Logs = (props) => {
       headerName: "Timer Duration Left",
       width: "200",
     },
-    { field: "message", headerName: "Timer Length", width: "250" },
+    { field: "message", headerName: "Message", width: "250" },
   ];
 
   useEffect(() => {

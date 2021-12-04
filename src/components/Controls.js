@@ -6,11 +6,11 @@ export const Controls = (props) => {
   console.log("Loading logs for node", props.node);
 
   const startTimer = () => {
-    API.startTimer(props.node);
+    API.startTimer(props.node.ip);
   };
 
   const setTimer= () => {
-    API.setTimer(props.node);
+    API.setTimer(props.node.ip);
   };
 
   return (
