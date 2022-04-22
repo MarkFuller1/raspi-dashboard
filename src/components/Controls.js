@@ -13,6 +13,10 @@ export const Controls = (props) => {
     API.setTimer(props.node.ip);
   };
 
+  const stopTimer = () => {
+    API.stopTimer(props.node.ip);
+  };
+
   return (
     <Grid container spacing={2}>
       <Grid item lg={12} xs={12}>
@@ -20,6 +24,9 @@ export const Controls = (props) => {
       </Grid>
       <Grid item lg={12} xs={12}>
         <Button onClick={startTimer}>Start</Button>
+      </Grid>
+      <Grid item lg={12} xs={12}>
+        <Button onClick={stopTimer}>Stop</Button>
       </Grid>
     </Grid>
   );

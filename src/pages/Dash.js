@@ -41,7 +41,7 @@ export const Dash = () => {
         return false;
       }
       API.refreshActiveNodes().then((result) => {
-        console.log("Finished refreshing nodes", result)
+        console.log("Finished refreshing nodes", result);
         toggleLoadStateLoading();
       });
       return true;
@@ -92,7 +92,7 @@ export const Dash = () => {
       <br />
       <Paper>
         <h2>Connected Nodes</h2>
-        <LoadingRender isLoading={nodeStatesLoading}/>
+        <LoadingRender isLoading={nodeStatesLoading} />
         {nodes.map((n) => {
           return conditionalColor(n);
         })}
@@ -101,14 +101,16 @@ export const Dash = () => {
         {filteredNodes.map((filteredNode) => {
           return (
             <Grid item lg={6} xs={12}>
-              <Grid container spacing={2} direction="column">
-                <Grid item xs={6} lg={6}>
-                  <Controls node={filteredNode} />
+              <Paper>
+                <Grid container spacing={2} direction="column">
+                  <Grid item xs={6} lg={6}>
+                    <Controls node={filteredNode} />
+                  </Grid>
+                  <Grid item xs={6} lg={6}>
+                    <Logs node={filteredNode} />
+                  </Grid>
                 </Grid>
-                <Grid item xs={6} lg={6}>
-                  <Logs node={filteredNode} />
-                </Grid>
-              </Grid>
+              </Paper>
             </Grid>
           );
         })}

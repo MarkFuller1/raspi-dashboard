@@ -39,6 +39,14 @@ export async function startTimer(ip) {
   });
 }
 
+export async function stopTimer(ip) {
+  return axios({
+    method: "PUT",
+    url: "http://" + ip + ":8080/timer/stop",
+    headers: request_headers,
+  });
+}
+
 export async function getNodeLogs(ip) {
   return axios({
     method: "GET",
